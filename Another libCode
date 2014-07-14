@@ -1,0 +1,14 @@
+function testNew_(institutionTrackingObject, encoded_page_name, encoded_script_name) {
+  for (var key in institutionTrackingObject) {
+    var utmcc = createGACookie_();
+    if (utmcc == null)
+    {
+      return null;
+    }
+    var encoded_page_name = encoded_script_name+"/"+encoded_page_name;
+    var ga_url1 = "http://www.google-analytics.com/__utm.gif?utmwv=5.2.2&utmhn=www.timtheinstitution.com&utmcs=-&utmul=en-us&utmje=1&utmdt&utmr=0=";
+    var ga_url2 = "&utmac=UA-43115795-2&utmcc=" + utmcc + "&utmu=DI~";
+    var ga_url_full = ga_url1 + encoded_page_name + "&utmp=" + encoded_page_name + ga_url2;
+    var response = UrlFetchApp.fetch(ga_url_full)
+    }
+}
